@@ -69,8 +69,8 @@ const Hero: React.FC<HeroProps> = ({ onStartListening, onBrowseLibrary }) => {
                 }
                 100% {
                   opacity: 1;
-                  transform: translateY(0) scale(1);
-                  filter: blur(0);
+                  transform: none;
+                  filter: none;
                 }
               }
               @keyframes gradient-x {
