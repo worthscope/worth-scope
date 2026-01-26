@@ -1,0 +1,69 @@
+import React from 'react';
+
+export const CustomMicIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+  <svg
+    version="1.1"
+    id="microphone_icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 125"
+    xmlSpace="preserve"
+    {...props}
+  >
+    <g>
+        <path
+            fill="none"
+            stroke="#1695a0"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M35,48.5 V19.2 c0,-8.3, 6.7,-15, 15,-15 s15,6.7, 15,15 v29.3 c0,8.3,-6.7,15,-15,15 S35,56.8,35,48.5z"/>
+        <line
+            fill="none"
+            stroke="#1695a0"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            x1="42"
+            y1="30"
+            x2="58"
+            y2="30"/>
+        <line
+            fill="none"
+            stroke="#1695a0"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            x1="42"
+            y1="38"
+            x2="58"
+            y2="38"/>
+        <path
+            fill="none"
+            stroke="#1695a0"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M25,55 c0,13.8,11.2,25,25,25 s25,-11.2,25,-25"/>
+        <line
+            fill="none"
+            stroke="#1695a0"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            x1="50"
+            y1="80"
+            x2="50"
+            y2="95"/>
+        <line
+            fill="none"
+            stroke="#1695a0"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            x1="35"
+            y1="95"
+            x2="65"
+            y2="95"/>
+    </g>
+  </svg>
+);
