@@ -6,8 +6,34 @@ export const fetchEpisodes = async (): Promise<Episode[]> => {
     const timestamp = Date.now();
     const freshRssUrl = `${RSS_URL}?t=${timestamp}`;
 
-    // Strategy 1: Try CORS Proxy with raw XML (Primary - for immediate updates)
+    // Strategy 1: Direct Fetch (Primary - fastest and most reliable if CORS allowed)
     try {
+        console.log("Attempting Strategy 1: Direct Fetch...");
+        const response = await fetch(freshRssUrl);
+        if (response.ok) {
+            const str = await response.text();
+            if (str.includes('<rss') || str.includes('<?xml')) {
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(str, "text/xml");
+                const items = xml.querySelectorAll("item");
+
+                if (items.length > 0) {
+                    console.log("Episodes fetched via Direct Fetch");
+                    const episodes = Array.from(items)
+                        .map(item => mapXmlItemToEpisode(item, xml))
+                        .filter(e => e.audioUrl);
+
+                    if (episodes.length > 0) return episodes;
+                }
+            }
+        }
+    } catch (error) {
+        console.warn("Strategy 1 (Direct Fetch) failed:", error);
+    }
+
+    // Strategy 2: Try CORS Proxy with raw XML (Backup)
+    try {
+        console.warn("Falling back to Strategy 2 (corsproxy)...");
         // Add cache buster to the proxy request as well just in case
         const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(freshRssUrl)}`;
         const response = await fetch(proxyUrl);
@@ -30,12 +56,12 @@ export const fetchEpisodes = async (): Promise<Episode[]> => {
             }
         }
     } catch (error) {
-        console.warn("Strategy 1 (corsproxy) failed:", error);
+        console.warn("Strategy 2 (corsproxy) failed:", error);
     }
 
-    // Strategy 2: Try rss2json (Backup - reliable but cached)
+    // Strategy 3: Try rss2json (Last Resort - reliable but cached)
     try {
-        console.warn("Falling back to Strategy 2 (rss2json)...");
+        console.warn("Falling back to Strategy 3 (rss2json)...");
         // Add count=50 to get a good number of episodes.
         // Uses api.rss2json.com which handles XML parsing server-side.
         // Note: rss2json usually ignores query params on the source URL for caching, so it might still be stale,
@@ -53,15 +79,15 @@ export const fetchEpisodes = async (): Promise<Episode[]> => {
             }
         }
     } catch (error) {
-        console.warn("Strategy 2 (rss2json) failed, trying fallback:", error);
+        console.warn("Strategy 3 (rss2json) failed:", error);
     }
 
-    // Strategy 3: Return Hardcoded Fallback Data if all else fails
-    console.warn("All fetch strategies failed, returning fallback data");
-    return getFallbackEpisodes();
+    // All strategies failed
+    console.warn("All fetch strategies failed.");
+    return [];
 };
 
-// --- Helpers for Strategy 1 (JSON) ---
+// --- Helpers for Strategy 3 (JSON) ---
 
 function mapJsonItemToEpisode(item: any, feed: any): Episode {
     const feedImage = feed.image || "";
@@ -80,7 +106,7 @@ function mapJsonItemToEpisode(item: any, feed: any): Episode {
     };
 }
 
-// --- Helpers for Strategy 2 (XML) ---
+// --- Helpers for Strategy 1 & 2 (XML) ---
 
 function mapXmlItemToEpisode(item: Element, xml: Document): Episode {
     const getVal = (tag: string) => item.getElementsByTagName(tag)[0]?.textContent || "";
@@ -152,39 +178,4 @@ function formatDuration(duration: any): string {
         }
     }
     return str;
-}
-
-function getFallbackEpisodes(): Episode[] {
-    return [
-        {
-            id: 'fb-1',
-            title: 'The Science of Getting Rich',
-            author: 'Wallace D. Wattles',
-            description: 'A practical framework for mastering the mental and spiritual principles of wealth creation. Understand how thought shapes reality and how gratitude accelerates success.',
-            duration: '18 min',
-            imageUrl: 'https://images.unsplash.com/photo-1555449372-23b9d044634f?q=80&w=600&auto=format&fit=crop',
-            audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-            category: 'Personal Development'
-        },
-        {
-            id: 'fb-2',
-            title: 'As a Man Thinketh',
-            author: 'James Allen',
-            description: 'A literary essay that explores the power of thought. "All that a man achieves and all that he fails to achieve is the direct result of his own thoughts."',
-            duration: '14 min',
-            imageUrl: 'https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=600&auto=format&fit=crop',
-            audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-            category: 'Philosophy'
-        },
-        {
-            id: 'fb-3',
-            title: 'Atomic Habits',
-            author: 'James Clear',
-            description: 'An easy and proven way to build good habits and break bad ones. Learn the framework for getting 1% better every day.',
-            duration: '22 min',
-            imageUrl: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=600&auto=format&fit=crop',
-            audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-            category: 'Productivity'
-        }
-    ];
 }
