@@ -2773,3 +2773,143 @@ body.nav-open { overflow: hidden; }
     padding: 3rem 1.5rem !important;
   }
 }
+
+/* ==============================================
+   GLOBAL OVERFLOW FIX (ALL SCREEN SIZES)
+================================================ */
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+  background-color: var(--c-cream);
+}
+.site-wrapper {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Fix tablet right margin gap on header */
+.header-grid {
+  padding: 0 !important;
+}
+
+/* Fix audio player card view elements */
+.card-view .progress-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+.card-view .custom-slider {
+  width: 100%;
+  flex: none;
+}
+.card-view .time-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.card-cover-container {
+  width: min(70vw, 300px) !important;
+  height: min(70vw, 300px) !important;
+  margin: 0 auto 30px auto !important;
+}
+
+/* ==============================================
+   ULTIMATE MOBILE AUDIO PLAYER CARD RE-DESIGN
+================================================ */
+@media (max-width: 600px) {
+  .audio-player-widget.maximized, .audio-player-widget.card-active {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    padding: 60px 30px 40px 30px !important;
+    box-sizing: border-box !important;
+    background: var(--c-charcoal) !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  
+  .card-view {
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    justify-content: center !important;
+  }
+
+  .card-cover-container {
+    width: min(80vw, 300px) !important;
+    height: min(80vw, 300px) !important;
+    margin: 0 auto 40px auto !important;
+    border-radius: 8px !important;
+    background: transparent !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3) !important;
+  }
+  
+  .card-cover-container img {
+    border-radius: 8px !important;
+  }
+
+  .card-marquee-container {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 5px !important;
+    text-align: left !important;
+  }
+
+  .card-subtitle {
+    text-align: left !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 40px !important;
+  }
+
+  /* Progress bar and time */
+  .card-view .progress-container {
+    margin-bottom: 30px !important;
+  }
+  
+  .card-view .progress-container .custom-slider {
+    width: 100% !important;
+    height: 6px !important;
+    border-radius: 3px !important;
+  }
+  
+  .card-view .time-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    font-size: 0.85rem !important;
+    margin-top: 10px !important;
+  }
+
+  /* Controls */
+  .card-controls {
+    gap: 40px !important;
+    margin-bottom: 40px !important;
+  }
+  
+  .ctrl-btn {
+    font-size: 2rem !important;
+  }
+  
+  .ctrl-btn svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .ctrl-play {
+    width: 75px !important;
+    height: 75px !important;
+    border-radius: 50% !important;
+    font-size: 2rem !important;
+  }
+
+  /* Volume */
+  .volume-container {
+    width: 100% !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+  }
+}
