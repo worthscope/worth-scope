@@ -1,14 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="icon" href="icon.svg?v=4" type="image/svg+xml">
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Playing Books Podcast</title>
-  <link rel="stylesheet" href="css/style.css?v=1789597813">
+  <link rel="stylesheet" href="css/style.css?v=1789600078">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" href="favicon.ico?v=3" sizes="any">
-  <link rel="icon" href="icon.png?v=3" type="image/png">
-  <link rel="apple-touch-icon" href="icon.png?v=3">
 </head>
 <body>
   <div class="site-wrapper">
@@ -58,9 +57,9 @@
         <h4 style="color: var(--c-teal); text-transform: uppercase; letter-spacing: 2px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; margin-bottom: 1rem; font-weight: 700;">Now Streaming. New Episodes Weekly.</h4>
         <h1 style="margin-bottom: 1rem; line-height: 1.1;">Designed for Readers.<br>Built for Listeners.</h1>
         <p>High-quality audio summaries of the world's bestselling books. Absorb key insights during your commute, workout, rest, coffee, or thinking time.</p>
-        <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
-          <button id="playLatestHeroBtn" class="btn-sharp" style="cursor:pointer;">Start Listening</button>
-          <a href="episodes.html" class="btn-sharp" style="background: transparent; color: var(--c-charcoal); border-color: var(--c-charcoal);">Past Episodes</a>
+        <div class="hero-btn-container">
+          <button id="playLatestHeroBtn" class="btn-sharp">Start Listening</button>
+          <a href="episodes.html" class="btn-sharp outline">Past Episodes</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -305,6 +304,6 @@
     <audio id="global-audio" src=""></audio>
   </div>
 
-  <script src="js/app.js?v=1789566290"></script>
+  <script src="js/app.js?v=1789600078"></script>
 </body>
 </html>
