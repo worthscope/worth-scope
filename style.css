@@ -2737,8 +2737,3 @@ body.nav-open { overflow: hidden; }
 .subscribe-grid a {
   border: 1px solid var(--border-color);
 }
-
-/* Fix footer logo link color */
-.footer-logo {
-  color: var(--c-cream) !important;
-}

@@ -6,6 +6,9 @@
   <title>Donate | Playing Books Podcast</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/icon.png">
 </head>
 <body>
   <div class="site-wrapper">
@@ -102,7 +105,7 @@
       </div>
 
       <!-- Apple Pay -->
-      <div class="episode-card" style="padding: 4rem 2rem; text-align: center; border-bottom: none;">
+      <div class="episode-card" style="padding: 4rem 2rem; text-align: center; border-bottom: none; border-right: 1px solid var(--border-color) !important;">
         <i class="fab fa-apple" style="font-size: 3rem; color: #000; margin-bottom: 2rem;"></i>
         <h3 style="font-family:'Playfair Display', serif; font-size:1.8rem; margin-bottom:1rem;">Apple Pay</h3>
         <p style="color:#556b7d; margin-bottom: 2rem; font-size:0.9rem;">One-tap checkout for iOS and Mac users.</p>
@@ -208,7 +211,7 @@
     <!-- Grid Footer -->
     <footer class="site-footer">
       <div class="footer-grid">
-        <div class="footer-logo">
+        <a href="index.html" class="footer-logo" style="text-decoration: none;">
           <svg width="40" height="40" viewBox="0 0 100 125" fill="none" stroke="currentColor" stroke-width="4">
             <path d="M35,48.5 V19.2 c0,-8.3, 6.7,-15, 15,-15 s15,6.7, 15,15 v29.3 c0,8.3,-6.7,15,-15,15 S35,56.8,35,48.5z"/>
             <path d="M25,55 c0,13.8,11.2,25,25,25 s25,-11.2,25,-25"/>
@@ -216,7 +219,8 @@
             <line x1="35" y1="95" x2="65" y2="95"/>
           </svg>
           <p>Tapping the Length. Breath. Depth. Height. of the human person.</p>
-        </div>
+        </a>
+        
         <div class="footer-links">
           <h3>Navigation</h3>
           <ul>
@@ -243,5 +247,6 @@
     </footer>
   </div>
 
+<script src="js/app.js"></script>
 </body>
 </html>

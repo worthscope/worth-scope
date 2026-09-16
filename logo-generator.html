@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logo Generator</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; background: #fdfce9; color: #36454f; }
+        .btn { display: inline-block; padding: 1rem 2rem; background: #1695a0; color: white; text-decoration: none; font-weight: bold; font-size: 1.2rem; margin-top: 2rem; border-radius: 4px; cursor: pointer; }
+    </style>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/icon.png">
+</head>
+<body>
+
+    <h1>Playing Books Logo Downloader</h1>
+    <p>We've converted the SVG into a high-resolution, transparent PNG right in your browser.</p>
+
+    <!-- Canvas to render the PNG -->
+    <canvas id="canvas" width="1000" height="1000" style="border: 1px dashed #ccc; background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAG0lEQVR42mP8z8AAR0xMAwYVGBQYFGBQAKADACx1BwF2Gv+wAAAAAElFTkSuQmCC'); background-size: 20px 20px; margin-top: 20px; max-width: 400px; height: auto;"></canvas>
+    <br>
+    <a id="download-btn" class="btn" download="playing_books_logo_transparent.png">Download Transparent PNG</a>
+
+    <script>
+        const svgString = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 100 125" fill="none" stroke="#1695a0" stroke-width="4">
+                <path d="M35,48.5 V19.2 c0,-8.3, 6.7,-15, 15,-15 s15,6.7, 15,15 v29.3 c0,8.3,-6.7,15,-15,15 S35,56.8,35,48.5z"/>
+                <path d="M25,55 c0,13.8,11.2,25,25,25 s25,-11.2,25,-25"/>
+                <line x1="50" y1="80" x2="50" y2="95"/>
+                <line x1="35" y1="95" x2="65" y2="95"/>
+            </svg>
+        `;
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        
+        // Convert SVG string to data URL
+        const svgBlob = new Blob([svgString], {type: 'image/svg+xml;charset=utf-8'});
+        const url = URL.createObjectURL(svgBlob);
+
+        img.onload = function() {
+            // Draw image with transparent background
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0, 1000, 1000);
+            URL.revokeObjectURL(url);
+            
+            // Generate PNG download link
+            const pngDataUrl = canvas.toDataURL('image/png');
+            document.getElementById('download-btn').href = pngDataUrl;
+        };
+        img.src = url;
+    </script>
+</body>
+</html>
