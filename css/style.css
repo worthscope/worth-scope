@@ -2742,3 +2742,34 @@ body.nav-open { overflow: hidden; }
 .footer-logo {
   color: var(--c-cream) !important;
 }
+
+/* ==============================================
+   MOBILE GRID OVERFLOW & PADDING HOTFIXES
+================================================ */
+@media (max-width: 768px) {
+  .hero-grid, .philosophy-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-text, .phil-text {
+    padding: 3rem 1.5rem !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-color) !important;
+  }
+  .hero-visual img, .phil-visual img {
+    border-right: none !important;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem !important;
+    word-break: break-word;
+  }
+}
+
+/* Fix inline grid and padding on quotes section for mobile */
+@media (max-width: 768px) {
+  .quotes-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .quotes-grid > div > div {
+    padding: 3rem 1.5rem !important;
+  }
+}
