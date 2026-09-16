@@ -2913,3 +2913,42 @@ html, body {
     box-sizing: border-box !important;
   }
 }
+
+/* Force maximized state to use card-view on mobile */
+@media (max-width: 600px) {
+  .audio-player-widget.maximized .audio-player-bar {
+    display: none !important;
+  }
+  .audio-player-widget.maximized .card-view {
+    display: flex !important;
+  }
+}
+
+/* Center Library Header and Search Box on Mobile */
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .section-header > div {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* Fix Header Width Overflow on Mobile */
+@media (max-width: 600px) {
+  .logo-container {
+    padding: 0 10px !important;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .donate-btn-header {
+    padding: 0 15px !important;
+    font-size: 0.7rem !important;
+    flex-shrink: 0;
+  }
+}
