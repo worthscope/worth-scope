@@ -1511,8 +1511,10 @@ audio {
       font-style: italic;
       color: var(--c-charcoal);
       line-height: 1.4;
-      border-left: 4px solid var(--c-teal);
-      padding-left: 3rem;
+      border-left: none;
+      position: relative;
+      z-index: 1;
+      padding-left: 0;
       margin-bottom: 1.5rem;
     }
     .manifesto-cite {
@@ -1521,7 +1523,7 @@ audio {
       font-weight: 600;
       color: var(--c-teal);
       letter-spacing: 2px;
-      padding-left: 3rem;
+      padding-left: 0;
     }
 
     /* ---- STORY GRID ---- */
@@ -1577,7 +1579,7 @@ audio {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2px;
-      width: 100%;
+  
     }
     .story-stat {
       background: rgba(255,255,255,0.04);
@@ -2046,7 +2048,7 @@ img { max-width: 100%; height: auto; display: block; }
 
   /* Manifesto */
   .manifesto-inner { padding: 0 1.5rem; }
-  .manifesto-quote { font-size: 1.6rem; padding-left: 1.5rem; }
+  .manifesto-quote { font-size: 1.6rem;  }
   .manifesto-section { padding: 5rem 0; }
 
   /* Legal pages */
@@ -2097,7 +2099,7 @@ img { max-width: 100%; height: auto; display: block; }
   .vision-subtext { font-size: 0.9rem; }
 
   /* Manifesto */
-  .manifesto-quote { font-size: 1.35rem; border-left-width: 3px; padding-left: 1.2rem; }
+  .manifesto-quote { font-size: 1.35rem;  }
 
   /* Why */
   .why-num { font-size: 1.5rem; }
@@ -2172,7 +2174,7 @@ img { max-width: 100%; height: auto; display: block; }
 
   .manifesto-section { padding: 2rem 0; }
   .manifesto-inner { padding: 0 0.75rem; }
-  .manifesto-quote { font-size: 0.9rem !important; padding-left: 0.75rem; }
+  .manifesto-quote { font-size: 0.9rem !important;  }
 
   .vision-banner { padding: 2rem 0.75rem; }
   .vision-quote { font-size: 0.9rem !important; }
@@ -2329,22 +2331,12 @@ img, video, iframe, table, pre {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
-    width: 100%;
+
   }
   .hero-btns a, .hero-btns button {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
-  .about-hero-cta {
     flex-direction: column;
     gap: 0.75rem;
-    width: 100%;
-  }
-  .hero-btn-primary, .hero-btn-outline {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
+
   }
 }
 
@@ -2358,13 +2350,13 @@ img, video, iframe, table, pre {
   .about-cta,
   .about-cta-right,
   .about-hero {
-    width: 100%;
+
     max-width: 100%;
   }
   /* Donation cards: single column */
   .episodes-grid[style*="repeat(3"] {
     grid-template-columns: 1fr !important;
-    width: 100%;
+
   }
   /* Remove side padding that causes overflow */
   .phil-text { padding: 3rem 1.5rem !important; }
@@ -2383,7 +2375,7 @@ img, video, iframe, table, pre {
   .books-scene-wrap,
   .about-hero-right {
     overflow: hidden;
-    width: 100%;
+
     max-width: 100%;
   }
   .books-scene { width: 100%; overflow: hidden; }
@@ -2413,7 +2405,7 @@ img, video, iframe, table, pre {
 @media (max-width: 250px) {
   html, body, .site-wrapper {
     overflow-x: hidden !important;
-    width: 100%;
+
     max-width: 100%;
   }
   /* Force everything single column */
@@ -2426,7 +2418,7 @@ img, video, iframe, table, pre {
     height: auto !important;
   }
   .donate-btn-header {
-    width: 100%;
+
     text-align: center;
     padding: 0.4rem 0.5rem;
     font-size: 0.6rem;
@@ -2441,12 +2433,12 @@ img, video, iframe, table, pre {
   /* Collapse all grids */
   [class*="grid"], [class*="section"] {
     grid-template-columns: 1fr !important;
-    width: 100%;
+
     max-width: 100%;
   }
   /* Prevent any paddings from causing overflow */
   section, div, header, footer, nav {
-    padding-left: 0.75rem;
+    
     padding-right: 0.75rem;
   }
   /* Remove fixed widths that cause overflow */
@@ -2640,32 +2632,6 @@ body.nav-open { overflow: hidden; }
    AUDIO PLAYER & UI OVERFLOW HOTFIXES (MOBILE)
 ================================================ */
 @media (max-width: 600px) {
-  .card-view {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    height: 100vh !important;
-    max-height: 100vh !important;
-    
-    top: 0 !important;
-    bottom: auto !important;
-    border: none !important;
-    border-radius: 0 !important;
-  }
-  .card-view .player-cover {
-    width: 160px !important;
-    height: 160px !important;
-    margin-bottom: 20px !important;
-  }
-  .card-view .player-title {
-    font-size: 1.5rem !important;
-    white-space: normal !important;
-    text-align: center;
-  }
-  .card-view .player-author {
-    font-size: 1rem !important;
-    text-align: center;
-  }
-
   /* Fix about page text overflow */
   .about-hero-h1 {
     font-size: 2.5rem !important;
@@ -2790,151 +2756,35 @@ html, body {
 .header-grid {
   padding: 0 !important;
 }
-/* ==============================================
-   ULTIMATE MOBILE AUDIO PLAYER CARD RE-DESIGN
-================================================ */
-@media (max-width: 600px) {
-  
-  .card-view {
-    padding: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    justify-content: center !important;
-  }
-
-  .card-cover-container {
-    width: min(80vw, 300px) !important;
-    height: min(80vw, 300px) !important;
-    margin: 0 auto 40px auto !important;
-    border-radius: 8px !important;
-    background: transparent !important;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3) !important;
-  }
-  
-  .card-cover-container img {
-    border-radius: 8px !important;
-  }
-
-  .card-marquee-container {
-    font-size: 1.8rem !important;
-    font-weight: 700 !important;
-    margin-bottom: 5px !important;
-    text-align: left !important;
-  }
-
-  .card-subtitle {
-    text-align: left !important;
-    font-size: 1.1rem !important;
-    margin-bottom: 40px !important;
-  }
-
-  /* Progress bar and time */
-  .card-view .progress-container {
-    margin-bottom: 30px !important;
-  }
-  
-  .card-view .progress-container .custom-slider {
-    width: 100% !important;
-    height: 6px !important;
-    border-radius: 3px !important;
-  }
-  
-  .card-view .time-container {
-    display: flex !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-    font-size: 0.85rem !important;
-    margin-top: 10px !important;
-  }
-
-  /* Controls */
-  .card-controls {
-    gap: 40px !important;
-    margin-bottom: 40px !important;
-  }
-  
-  .ctrl-btn {
-    font-size: 2rem !important;
-  }
-  
-  .ctrl-btn svg {
-    width: 32px !important;
-    height: 32px !important;
-  }
-
-  .ctrl-play {
-    width: 75px !important;
-    height: 75px !important;
-    border-radius: 50% !important;
-    font-size: 2rem !important;
-  }
-
-  /* Volume */
-  .volume-container {
-    width: 100% !important;
-    padding: 0 20px !important;
-    box-sizing: border-box !important;
-  }
-}
-
-/* Center Library Header and Search Box on Mobile */
-@media (max-width: 768px) {
-  .section-header {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-  .section-header > div {
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-}
-
-/* Fix Header Width Overflow on Mobile */
-@media (max-width: 600px) {
-    padding: 0 10px !important;
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .donate-btn-header {
-    padding: 0 15px !important;
-    font-size: 0.7rem !important;
-    flex-shrink: 0;
-  }
-}
 
 /* Hero Button Container */
 
+
+/* Equal Size Hero Buttons without full-screen stretch */
 .hero-btn-container {
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
 }
 .hero-btn-container .btn-sharp {
-  width: 100%;
+  width: 220px;
+  max-width: 100%;
   box-sizing: border-box;
-  text-align: center;
 }
 
-@media (max-width: 600px) {
-    grid-template-columns: 1fr;
-    /* Do not force width to 100vw, let it size to the button content */
-  }
-}
-
-/* Force expanded widget to fill screen on mobile */
-@media (max-width: 600px) {
-  .audio-player-widget.expanded {
-    width: 100vw !important;
-    height: 100vh !important;
-    max-height: -webkit-fill-available;
-    top: 0 !important;
-    left: 0 !important;
-    transform: none !important;
-    border-radius: 0 !important;
-    padding: 30px 20px !important;
-  }
+/* Creative Quote Styling for Manifesto */
+.manifesto-quote::before {
+  content: "“";
+  position: absolute;
+  top: -0.25em;
+  left: -0.1em;
+  font-size: 5em;
+  color: var(--c-teal);
+  opacity: 0.12;
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+  z-index: -1;
+  pointer-events: none;
 }
