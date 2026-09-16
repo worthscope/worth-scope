@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library | Playing Books Podcast</title>
+  <link rel="stylesheet" href="css/style.css?v=1789591133">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Grid Header -->
+    <header class="header-grid">
+      <a href="index.html" class="logo-container">
+        <svg width="30" height="30" viewBox="0 0 100 125" fill="none" stroke="currentColor" stroke-width="6">
+          <path d="M35,48.5 V19.2 c0,-8.3, 6.7,-15, 15,-15 s15,6.7, 15,15 v29.3 c0,8.3,-6.7,15,-15,15 S35,56.8,35,48.5z"/>
+          <path d="M25,55 c0,13.8,11.2,25,25,25 s25,-11.2,25,-25"/>
+          <line x1="50" y1="80" x2="50" y2="95"/>
+          <line x1="35" y1="95" x2="65" y2="95"/>
+        </svg>
+        Playing Books
+      </a>
+      <nav class="nav-links">
+        <a href="episodes.html">Episodes</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <a href="donation.html" class="donate-btn-header">Support Us</a>
+          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+      <div class="mobile-nav-inner">
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&times;</button>
+        <nav class="mobile-nav-links">
+          <a href="index.html">Home</a>
+          <a href="episodes.html">Episodes</a>
+          <a href="about.html">About Us</a>
+          <a href="donation.html">Support Us</a>
+        </nav>
+        <div class="mobile-nav-footer">
+          <a href="https://podcasts.apple.com/us/podcast/playing-books/id1768578068" target="_blank"><i class="fab fa-apple"></i></a>
+          <a href="https://open.spotify.com/show/79YPMiPBPl08ffi3u30aRj" target="_blank"><i class="fab fa-spotify"></i></a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms-of-service.html">Terms</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <section class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem;">
+      <div>
+        <h1 style="font-size: 4rem; color: var(--c-charcoal);">The Library.</h1>
+        <p style="font-size: 1.2rem; color: #556b7d; margin-top: 1rem;">The complete past episodes of the Playing Books podcast.</p>
+      </div>
+      <div style="flex: 1; max-width: 400px;">
+        <div style="position: relative;">
+          <input type="text" id="episodeSearchInput" placeholder="Search episodes..." style="width: 100%; padding: 1rem 1.5rem 1rem 3rem; font-size: 1rem; border: 1px solid var(--c-charcoal); background: var(--c-white); color: var(--c-charcoal); outline: none; font-family: 'Montserrat', sans-serif;">
+          <i class="fas fa-search" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--c-charcoal); opacity: 0.5;"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid Episodes -->
+    <section class="episodes-section" style="border-bottom: none;">
+      <div class="episodes-grid" id="fullEpisodesGrid">
+        <!-- JS Populated -->
+        <div style="padding: 3rem;">Loading library...</div>
+      </div>
+    </section>
+
+    <!-- Grid Footer -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <svg width="40" height="40" viewBox="0 0 100 125" fill="none" stroke="currentColor" stroke-width="4">
+            <path d="M35,48.5 V19.2 c0,-8.3, 6.7,-15, 15,-15 s15,6.7, 15,15 v29.3 c0,8.3,-6.7,15,-15,15 S35,56.8,35,48.5z"/>
+            <path d="M25,55 c0,13.8,11.2,25,25,25 s25,-11.2,25,-25"/>
+            <line x1="50" y1="80" x2="50" y2="95"/>
+            <line x1="35" y1="95" x2="65" y2="95"/>
+          </svg>
+          <p>Tapping the Length. Breath. Depth. Height. of the human person.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="episodes.html">Episodes</a></li>
+            <li><a href="donation.html">Support Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="currentYear"></span> Worthscope. All rights reserved.</div>
+        <div style="display:flex; gap: 1rem;">
+          <a href="https://podcasts.apple.com/us/podcast/playing-books/id1768578068" target="_blank" style="color:inherit;"><i class="fab fa-apple"></i></a>
+          <a href="https://open.spotify.com/show/79YPMiPBPl08ffi3u30aRj" target="_blank" style="color:inherit;"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+                <!-- Audio Player Widget -->
+  <div id="audioPlayerWidget" class="audio-player-widget hidden paused">
+    
+    <!-- PILL MODE (Minimized - Draggable) -->
+    <div class="pill-view" id="playerPillView">
+      <div class="pill-cover"><img src="" id="pillCover" alt="Cover" onerror="this.src='img/podcast_listener_hero_1789554024093.jpg'"></div>
+      <div class="pill-marquee-container">
+        <div class="pill-marquee pillTitleSync" style="color: var(--c-cream);">Select a track</div>
+      </div>
+      <button class="pill-btn play-btn-sync"><i class="fas fa-play"></i></button>
+      <button class="pill-btn" id="btnMax"><i class="fas fa-chevron-up"></i></button>
+      <button class="pill-btn" id="btnClosePill"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- BLACK BOTTOM BAR MODE (Maximized) -->
+    <div class="audio-player-bar" id="playerBarView">
+      <div class="player-cover">
+        <img src="" id="barCover" alt="Cover" onerror="this.src='img/podcast_listener_hero_1789554024093.jpg'">
+      </div>
+      <div class="player-details">
+        <div class="pill-marquee-container" style="width: 100%; max-width: 800px;">
+          <div class="pill-marquee pillTitleSync" style="font-family: 'Playfair Display', serif; font-size: 1.4rem;">Select a track</div>
+        </div>
+        
+        <!-- Progress & Volume -->
+        <div class="bar-controls-row">
+          <div class="time-container"><span id="current-time">0:00</span></div>
+          <input type="range" id="seek-slider" class="custom-slider" max="100" value="0">
+          <div class="time-container"><span id="duration-time">0:00</span></div>
+          
+          <i class="fas fa-volume-up" style="margin-left: 30px; color: var(--c-teal);"></i>
+          <input type="range" id="volume-slider" class="custom-slider" style="width: 100px; margin-left: 10px;" max="100" value="100">
+        </div>
+      </div>
+
+      <div class="player-controls">
+        <button class="player-btn" id="btnSkipBack" title="Previous Episode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+        </button>
+        <button class="player-btn play-btn-sync"><i class="fas fa-play"></i></button>
+        <button class="player-btn" id="btnSkipFwd" title="Next Episode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+        </button>
+        
+        <div style="border-left: 1px solid rgba(255,255,255,0.2); height: 40px; margin: 0 20px;"></div>
+        
+        <button class="player-btn" id="btnMin" title="Minimize"><i class="fas fa-chevron-down"></i></button>
+        <button class="player-btn" id="btnExpand" title="Expand"><i class="fas fa-expand-arrows-alt"></i></button>
+        <button class="player-btn" id="btnClose" title="Close"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    
+    <!-- THIRD SIZE: EXPANDED GLASSY CARD (Draggable) -->
+    <div class="card-view" id="playerCardView">
+      <div class="card-drag-indicator"></div>
+      
+      <div class="card-cover-container">
+        <img src="" id="cardCover" alt="Cover" onerror="this.src='img/podcast_listener_hero_1789554024093.jpg'">
+      </div>
+      <div class="card-marquee-container">
+        <div class="card-marquee pillTitleSync">Select a track</div>
+      </div>
+      <div class="card-subtitle">Playing Books</div>
+      
+      <div class="progress-container">
+        <input type="range" id="seek-slider-card" class="custom-slider" max="100" value="0">
+        <div class="time-container">
+          <span id="current-time-card">0:00</span>
+          <span id="duration-time-card">0:00</span>
+        </div>
+      </div>
+
+      <div class="card-controls">
+        <button class="ctrl-btn" id="btnSkipBackCard" title="Previous Episode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+        </button>
+        <button class="ctrl-play play-btn-sync"><i class="fas fa-play"></i></button>
+        <button class="ctrl-btn" id="btnSkipFwdCard" title="Next Episode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+        </button>
+      </div>
+
+      <div class="volume-container">
+        <i class="fas fa-volume-up" style="color:var(--c-teal); opacity:0.8; font-size:1.2rem;"></i>
+        <input type="range" id="volume-slider-card" class="custom-slider" max="100" value="100">
+      </div>
+
+      <div class="bottom-actions">
+        <button class="action-btn" id="btnMinCard"><i class="fas fa-chevron-down"></i></button>
+        <button class="action-btn" id="btnCompress"><i class="fas fa-compress-arrows-alt"></i></button>
+        <button class="action-btn" id="btnCloseCard"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+
+    <audio id="global-audio" src=""></audio>
+  </div>
+
+  <script src="js/app.js?v=1789566290"></script>
+</body>
+</html>

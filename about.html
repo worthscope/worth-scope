@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Playing Books Podcast</title>
+  <link rel="stylesheet" href="css/style.css?v=about2026">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    /* =============================================
+       ABOUT PAGE — UNIQUE STYLES
+    ============================================= */
+
+    /* ---- HERO ---- */
+    .about-hero {
+      min-height: 100vh;
+      background: var(--c-charcoal);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero-left {
+      padding: 8rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      z-index: 2;
+    }
+    .about-hero-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 5px;
+      color: var(--c-teal);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .about-hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      font-weight: 900;
+      color: var(--c-cream);
+      line-height: 1.05;
+      margin-bottom: 2.5rem;
+    }
+    .about-hero-h1 em {
+      font-style: italic;
+      color: var(--c-teal);
+    }
+    .about-hero-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(253,252,233,0.65);
+      max-width: 480px;
+      margin-bottom: 3rem;
+    }
+    .about-hero-cta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-btn-primary {
+      background: var(--c-teal);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      padding: 1rem 2.5rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .hero-btn-primary:hover { background: #1280a8; color: white; }
+    .hero-btn-outline {
+      color: var(--c-cream);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      padding: 1rem 2.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .hero-btn-outline:hover { border-color: var(--c-teal); color: var(--c-teal); }
+
+    .about-hero-right {
+      position: relative;
+      overflow: hidden;
+      background: #1a2b32;
+    }
+    /* Animated grid lines */
+    .about-hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(22,149,160,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22,149,160,0.08) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridShift 20s linear infinite;
+    }
+    @keyframes gridShift { from { transform: translateY(0); } to { transform: translateY(60px); } }
+
+    .about-hero-books-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ---- MANIFESTO SECTION ---- */
+    .manifesto-section {
+      background: var(--c-cream);
+      padding: 8rem 0;
+      overflow: hidden;
+    }
+    .manifesto-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 4rem;
+    }
+    .manifesto-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 5px;
+      color: var(--c-teal);
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .manifesto-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+    .manifesto-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--c-charcoal);
+      line-height: 1.4;
+      border-left: 4px solid var(--c-teal);
+      padding-left: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    .manifesto-cite {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--c-teal);
+      letter-spacing: 2px;
+      padding-left: 3rem;
+    }
+
+    /* ---- STORY GRID ---- */
+    .story-section {
+      background: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .story-text-col {
+      padding: 7rem 5rem;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .story-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      font-weight: 700;
+      color: var(--c-teal);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .story-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 900;
+      color: var(--c-charcoal);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+    .story-p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #556b7d;
+      margin-bottom: 1.5rem;
+    }
+    .story-visual-col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--c-charcoal);
+      position: relative;
+      overflow: hidden;
+      padding: 4rem;
+    }
+    .story-stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      width: 100%;
+    }
+    .story-stat {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .story-stat:hover { background: rgba(22,149,160,0.15); }
+    .story-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--c-teal);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .story-stat-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: rgba(253,252,233,0.5);
+      text-transform: uppercase;
+    }
+
+    /* ---- PILLARS SECTION ---- */
+    .pillars-about {
+      background: var(--c-cream);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .pillars-about-header {
+      padding: 6rem 4rem 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .pillars-about-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 5px;
+      font-weight: 700;
+      color: var(--c-teal);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .pillars-about-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      color: var(--c-charcoal);
+      margin-bottom: 1rem;
+    }
+    .pillars-about-sub {
+      font-family: 'Montserrat', sans-serif;
+      color: #556b7d;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+    .pillars-about-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 5rem;
+      border-top: 1px solid var(--border-color);
+    }
+    .pillar-card {
+      padding: 4rem 3rem;
+      border-right: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transition: background 0.3s;
+    }
+    .pillar-card:last-child { border-right: none; }
+    .pillar-card:hover { background: white; }
+    .pillar-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(22,149,160,0.08);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      line-height: 1;
+      transition: color 0.3s;
+    }
+    .pillar-card:hover .pillar-num { color: rgba(22,149,160,0.15); }
+    .pillar-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--c-teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    .pillar-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--c-charcoal);
+      margin-bottom: 1rem;
+    }
+    .pillar-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: #556b7d;
+    }
+
+    /* ---- VISION BANNER ---- */
+    .vision-banner {
+      background: #1695a0;
+      padding: 8rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .vision-banner::before {
+      content: '"';
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: 40rem;
+      color: rgba(255,255,255,0.04);
+      top: -10rem;
+      left: 50%;
+      transform: translateX(-50%);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .vision-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 5px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+    .vision-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.4;
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .vision-subtext {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ---- MARQUEE TAPE ---- */
+    .tape-section {
+      background: var(--c-charcoal);
+      padding: 1.5rem 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .tape-track {
+      display: flex;
+      gap: 0;
+      white-space: nowrap;
+      animation: tapeSroll 30s linear infinite;
+    }
+    .tape-item {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: rgba(253,252,233,0.3);
+      text-transform: uppercase;
+      padding: 0 3rem;
+      flex-shrink: 0;
+    }
+    .tape-item.accent { color: var(--c-teal); }
+    @keyframes tapeSroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ---- WHY AUDIOBOOKS ---- */
+    .why-section {
+      background: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .why-visual {
+      background: var(--c-cream);
+      border-right: 1px solid var(--border-color);
+      padding: 6rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .why-reasons {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .why-reason {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .why-reason:last-child { border-bottom: none; }
+    .why-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--c-teal);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 40px;
+    }
+    .why-text strong {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--c-charcoal);
+      display: block;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.5px;
+    }
+    .why-text span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      color: #556b7d;
+      line-height: 1.6;
+    }
+    .why-text-col {
+      padding: 6rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* ---- CTA SECTION ---- */
+    .about-cta {
+      background: #0d1f2d;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 400px;
+    }
+    .about-cta-left {
+      padding: 6rem 5rem;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .about-cta-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 900;
+      color: var(--c-cream);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .about-cta-p {
+      font-family: 'Montserrat', sans-serif;
+      color: rgba(253,252,233,0.65);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+    .about-cta-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .cta-link-block {
+      padding: 4rem 3rem;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .cta-link-block:nth-child(even) { border-right: none; }
+    .cta-link-block:nth-child(3), .cta-link-block:nth-child(4) { border-bottom: none; }
+    .cta-link-block:hover { background: rgba(22,149,160,0.12); }
+    .cta-link-platform {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      font-weight: 700;
+      color: var(--c-teal);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .cta-link-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--c-cream);
+      margin-bottom: auto;
+    }
+    .cta-link-arrow {
+      font-size: 1.5rem;
+      color: rgba(253,252,233,0.25);
+      margin-top: 2rem;
+      transition: color 0.3s;
+    }
+    .cta-link-block:hover .cta-link-arrow { color: var(--c-teal); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-hero, .story-section, .why-section, .about-cta { grid-template-columns: 1fr; }
+      .about-hero-left { padding: 5rem 2rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .about-hero-right { min-height: 400px; }
+      .story-text-col { padding: 4rem 2rem; border-right: none; border-bottom: 1px solid var(--border-color); }
+      .story-visual-col { padding: 3rem 2rem; }
+      .story-stat-grid { grid-template-columns: 1fr 1fr; }
+      .pillars-about-grid { grid-template-columns: 1fr 1fr; }
+      .pillar-card:nth-child(2) { border-right: none; }
+      .pillar-card:nth-child(3), .pillar-card:nth-child(4) { border-top: 1px solid var(--border-color); }
+      .pillar-card:nth-child(4) { border-right: none; }
+      .why-section { grid-template-columns: 1fr; }
+      .why-visual { border-right: none; border-bottom: 1px solid var(--border-color); }
+      .why-text-col { padding: 4rem 2rem; }
+      .about-cta { grid-template-columns: 1fr; }
+      .about-cta-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 4rem 2rem; }
+      .about-cta-right { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <!-- Header -->
+  <header class="header-grid">
+    <a href="index.html" class="logo-container">
+      <svg width="30" height="30" viewBox="0 0 100 125" fill="none" stroke="currentColor" stroke-width="6">
+        <path d="M35,48.5 V19.2 c0,-8.3, 6.7,-15, 15,-15 s15,6.7, 15,15 v29.3 c0,8.3,-6.7,15,-15,15 S35,56.8,35,48.5z"/>
+        <path d="M25,55 c0,13.8,11.2,25,25,25 s25,-11.2,25,-25"/>
+        <line x1="50" y1="80" x2="50" y2="95"/>
+        <line x1="35" y1="95" x2="65" y2="95"/>
+      </svg>
+      Playing Books
+    </a>
+    <nav class="nav-links">
+      <a href="episodes.html">Episodes</a>
+      <a href="about.html">About Us</a>
+    </nav>
+    <a href="donation.html" class="donate-btn-header">Support Us</a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+      <div class="mobile-nav-inner">
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&times;</button>
+        <nav class="mobile-nav-links">
+          <a href="index.html">Home</a>
+          <a href="episodes.html">Episodes</a>
+          <a href="about.html">About Us</a>
+          <a href="donation.html">Support Us</a>
+        </nav>
+        <div class="mobile-nav-footer">
+          <a href="https://podcasts.apple.com/us/podcast/playing-books/id1768578068" target="_blank"><i class="fab fa-apple"></i></a>
+          <a href="https://open.spotify.com/show/79YPMiPBPl08ffi3u30aRj" target="_blank"><i class="fab fa-spotify"></i></a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms-of-service.html">Terms</a>
+        </div>
+      </div>
+    </div>
+
+  <!-- ══ HERO ══ -->
+  <section class="about-hero">
+    <div class="about-hero-left">
+      <p class="about-hero-eyebrow">About Playing Books</p>
+      <h1 class="about-hero-h1">Books Are<br>Not <em>Finished.</em><br>They Are To<br>Be Played.</h1>
+      <p class="about-hero-sub">A podcast dedicated to transforming how you experience the written word — turning passive reading into active, lasting growth.</p>
+      <div class="about-hero-cta">
+        <a href="episodes.html" class="hero-btn-primary">LISTEN NOW</a>
+        <a href="donation.html" class="hero-btn-outline">SUPPORT US</a>
+      </div>
+    </div>
+    <div class="about-hero-right">
+      <div class="about-hero-books-wrap" id="booksSceneWrap">
+        <div class="books-scene" id="booksScene">
+          <div class="book-pile left-pile" id="leftPile">
+            <div class="flat-book fb1" data-title="ATOMIC HABITS"></div>
+            <div class="flat-book fb2" data-title="DEEP WORK"></div>
+            <div class="flat-book fb3" data-title="SAPIENS"></div>
+            <div class="flat-book fb4" data-title="GRIT"></div>
+            <div class="flat-book fb5" data-title="OUTLIERS"></div>
+            <div class="flat-book fb6" data-title="MINDSET"></div>
+            <div class="flat-book fb7" data-title="IKIGAI"></div>
+          </div>
+          <div class="book-pile right-pile" id="rightPile">
+            <div class="flat-book fb8" data-title="START WITH WHY"></div>
+            <div class="flat-book fb9" data-title="THINKING FAST"></div>
+            <div class="flat-book fb10" data-title="ESSENTIALISM"></div>
+            <div class="flat-book fb11" data-title="THE ALCHEMIST"></div>
+            <div class="flat-book fb12" data-title="ANTIFRAGILE"></div>
+            <div class="flat-book fb13" data-title="MEDITATIONS"></div>
+            <div class="flat-book fb14" data-title="MAN'S SEARCH"></div>
+          </div>
+          <div class="featured-book-wrap" id="featuredBookWrap">
+            <div class="featured-book" id="featuredBook">
+              <div class="featured-book-spine"></div>
+              <div class="featured-book-face">
+                <div class="fb-rec"><span class="fb-dot"></span> NOW PLAYING</div>
+                <div class="fb-logo"><span class="fb-p">P</span><span class="fb-b">B</span></div>
+                <p class="fb-label">BOOKS ARE NOT FINISHED.</p>
+                <hr class="fb-hr">
+                <p class="fb-sub">They are to be played.</p>
+                <div class="fb-footer">
+                  <span class="fb-site">PLAYINGBOOKS.ORG</span>
+                  <div class="open-btn fb-open" id="btnPlayLatest">OPEN</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SCROLLING TAPE ══ -->
+  <div class="tape-section">
+    <div class="tape-track">
+      <span class="tape-item accent">Playing Books</span>
+      <span class="tape-item">Read More</span>
+      <span class="tape-item accent">·</span>
+      <span class="tape-item">Think Deeper</span>
+      <span class="tape-item accent">·</span>
+      <span class="tape-item">Grow Better</span>
+      <span class="tape-item accent">·</span>
+      <span class="tape-item">Live Boldly</span>
+      <span class="tape-item accent">·</span>
+      <span class="tape-item">Books Are Not Finished</span>
+      <span class="tape-item accent">·</span>
+      <span class="tape-item">They Are To Be Played</span>
+      <span class="tape-item accent">·</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="tape-item accent">Playing Books</span>
+      <span class="tape-item">Read More</span>
+      <span class="tape-item accent">·</span>
+      <span class="tape-item">Think Deeper</span>
+      <span class="tape-item accent">·</span>
+      <span class="tape-item">Grow Better</span>
+      <span class="tape-item accent">·</span>
+      <span class="tape-item">Live Boldly</span>
+      <span class="tape-item accent">·</span>
+      <span class="tape-item">Books Are Not Finished</span>
+      <span class="tape-item accent">·</span>
+      <span class="tape-item">They Are To Be Played</span>
+      <span class="tape-item accent">·</span>
+    </div>
+  </div>
+
+  <!-- ══ MANIFESTO ══ -->
+  <section class="manifesto-section">
+    <div class="manifesto-inner">
+      <div class="manifesto-label">Our Manifesto</div>
+      <blockquote class="manifesto-quote">
+        "You are not mentally developed by what you read, but by what you <em>think</em> about what you read."
+      </blockquote>
+      <p class="manifesto-cite">— WALLACE D. WATTLES</p>
+    </div>
+  </section>
+
+  <!-- ══ STORY + STATS ══ -->
+  <section class="story-section">
+    <div class="story-text-col">
+      <p class="story-label">Our Mission</p>
+      <h2 class="story-h2">Turning Readers Into Thinkers</h2>
+      <p class="story-p">At Playing Books, we believe that reading is just the beginning of a transformative journey. The podcast exists to incentivize people of all ages — especially young people — to not only read but to <em>think</em> and optimise what they read in practical, lasting ways.</p>
+      <p class="story-p">In 2013, Ian Crouch wrote about "The Curse of Reading and Forgetting" — the universal frustration of finishing a book only for it to dissolve from memory. We fight that curse every episode. Through audiobooks, active discussion, and deep engagement, we build retention pathways that stick.</p>
+    </div>
+    <div class="story-visual-col">
+      <div class="story-stat-grid">
+        <div class="story-stat">
+          <div class="story-stat-num">∞</div>
+          <div class="story-stat-label">Books to Play</div>
+        </div>
+        <div class="story-stat">
+          <div class="story-stat-num">4</div>
+          <div class="story-stat-label">Growth Pillars</div>
+        </div>
+        <div class="story-stat">
+          <div class="story-stat-num">1</div>
+          <div class="story-stat-label">Bold Mission</div>
+        </div>
+        <div class="story-stat">
+          <div class="story-stat-num">100%</div>
+          <div class="story-stat-label">Passion Driven</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4 PILLARS ══ -->
+  <section class="pillars-about">
+    <div class="pillars-about-header">
+      <p class="pillars-about-label">The Framework</p>
+      <h2 class="pillars-about-h2">Four Dimensions of Growth</h2>
+      <p class="pillars-about-sub">Every episode is crafted around these foundational pillars — guiding you toward complete intellectual and personal development.</p>
+    </div>
+    <div class="pillars-about-grid">
+      <div class="pillar-card">
+        <span class="pillar-num">01</span>
+        <div class="pillar-icon"><i class="fas fa-wind"></i></div>
+        <h3 class="pillar-title">Breath</h3>
+        <p class="pillar-desc">Pause. Reflect. Let insights settle before rushing to the next idea. Depth begins with stillness and intentional space between thoughts.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">02</span>
+        <div class="pillar-icon"><i class="fas fa-book-open"></i></div>
+        <h3 class="pillar-title">Books</h3>
+        <p class="pillar-desc">The raw material of every great mind. We curate timeless works and guide you beyond the pages — into the living application of ideas.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">03</span>
+        <div class="pillar-icon"><i class="fas fa-brain"></i></div>
+        <h3 class="pillar-title">Thinking</h3>
+        <p class="pillar-desc">Reading without thinking is accumulation without growth. We train you to question, connect, and apply every concept you encounter.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">04</span>
+        <div class="pillar-icon"><i class="fas fa-bolt"></i></div>
+        <h3 class="pillar-title">Action</h3>
+        <p class="pillar-desc">The ultimate measure of wisdom is behaviour change. We bridge the gap between knowing and doing — turning ideas into lived transformation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ VISION BANNER ══ -->
+  <section class="vision-banner">
+    <p class="vision-label">Our Vision</p>
+    <p class="vision-quote">We won't stop until audiobooks start having effects on people like music does.</p>
+    <p class="vision-subtext">Think about how a song can instantly transport you to a different emotional state, how it can stay with you for years, how certain lyrics become life mantras. Books can — and should — have this same power.</p>
+  </section>
+
+  <!-- ══ WHY AUDIOBOOKS ══ -->
+  <section class="why-section">
+    <div class="why-visual">
+      <p class="story-label">Why Audio</p>
+      <h2 class="story-h2" style="margin-bottom: 3rem;">Why Audiobooks Change Everything</h2>
+      <div class="why-reasons">
+        <div class="why-reason">
+          <span class="why-num">01</span>
+          <div class="why-text">
+            <strong>Learning in Lost Time</strong>
+            <span>Transform commutes, workouts, and chores into deep learning sessions — time that would otherwise be idle.</span>
+          </div>
+        </div>
+        <div class="why-reason">
+          <span class="why-num">02</span>
+          <div class="why-text">
+            <strong>Different Cognitive Pathways</strong>
+            <span>Audio engages your brain differently than visual reading, activating memory and emotional processing simultaneously.</span>
+          </div>
+        </div>
+        <div class="why-reason">
+          <span class="why-num">03</span>
+          <div class="why-text">
+            <strong>Infinitely Replayable</strong>
+            <span>Replay key passages instantly. The best ideas deserve to be heard more than once — and repetition builds retention.</span>
+          </div>
+        </div>
+        <div class="why-reason">
+          <span class="why-num">04</span>
+          <div class="why-text">
+            <strong>Emotional Narration</strong>
+            <span>A skilled narrator adds dimensions a page cannot — tone, rhythm, and feeling that make complex ideas unforgettable.</span>
+          </div>
+        </div>
+        <div class="why-reason">
+          <span class="why-num">05</span>
+          <div class="why-text">
+            <strong>Gateway to Reading</strong>
+            <span>Audiobooks don't replace reading — they ignite the desire for it. Many listeners discover a love of physical books through audio.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-text-col">
+      <p class="story-label">The Curse</p>
+      <h2 class="story-h2">Reading Without Retention Is Just Entertainment</h2>
+      <p class="story-p">Most people read books, take notes, feel inspired — and then forget 90% within a week. This isn't a lack of intelligence. It's a lack of system.</p>
+      <p class="story-p">Playing Books exists to build that system for you. Each episode is engineered to give you multiple exposures to an idea — through story, discussion, and actionable framing — creating the repetition that turns information into wisdom.</p>
+      <p class="story-p">We don't just summarise books. We play them — unpacking the ideas that matter, challenging you to think, and giving you tools to act.</p>
+      <a href="episodes.html" class="hero-btn-primary" style="align-self: flex-start; margin-top: 1rem;">EXPLORE EPISODES</a>
+    </div>
+  </section>
+
+  <!-- ══ LISTEN CTA ══ -->
+  <section class="about-cta">
+    <div class="about-cta-left">
+      <p class="about-hero-eyebrow" style="margin-bottom: 1.5rem;">Listen Everywhere</p>
+      <h2 class="about-cta-h2">Join Thousands of Thinkers</h2>
+      <p class="about-cta-p">Subscribe on your favourite platform and never miss an episode that could change how you think.</p>
+      <a href="episodes.html" class="hero-btn-primary" style="align-self: flex-start;">SEE ALL EPISODES</a>
+    </div>
+    <div class="about-cta-right">
+      <a href="https://podcasts.apple.com/us/podcast/playing-books/id1768578068" target="_blank" class="cta-link-block">
+        <div>
+          <p class="cta-link-platform">Podcast</p>
+          <p class="cta-link-name">Apple Podcasts</p>
+        </div>
+        <i class="fab fa-apple cta-link-arrow"></i>
+      </a>
+      <a href="https://open.spotify.com/show/79YPMiPBPl08ffi3u30aRj" target="_blank" class="cta-link-block">
+        <div>
+          <p class="cta-link-platform">Streaming</p>
+          <p class="cta-link-name">Spotify</p>
+        </div>
+        <i class="fab fa-spotify cta-link-arrow"></i>
+      </a>
+      <a href="https://music.amazon.com/podcasts/aed261f1-3816-4aef-b12c-4f2881c3ade0/playing-books" target="_blank" class="cta-link-block">
+        <div>
+          <p class="cta-link-platform">Streaming</p>
+          <p class="cta-link-name">Amazon Music</p>
+        </div>
+        <i class="fab fa-amazon cta-link-arrow"></i>
+      </a>
+      <a href="https://www.iheart.com/podcast/269-playing-books-273472023/" target="_blank" class="cta-link-block">
+        <div>
+          <p class="cta-link-platform">Radio</p>
+          <p class="cta-link-name">iHeart Radio</p>
+        </div>
+        <i class="fas fa-heart cta-link-arrow"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <svg width="40" height="40" viewBox="0 0 100 125" fill="none" stroke="currentColor" stroke-width="4">
+          <path d="M35,48.5 V19.2 c0,-8.3, 6.7,-15, 15,-15 s15,6.7, 15,15 v29.3 c0,8.3,-6.7,15,-15,15 S35,56.8,35,48.5z"/>
+          <path d="M25,55 c0,13.8,11.2,25,25,25 s25,-11.2,25,-25"/>
+          <line x1="50" y1="80" x2="50" y2="95"/>
+          <line x1="35" y1="95" x2="65" y2="95"/>
+        </svg>
+        <p>Tapping the Length. Breath. Depth. Height. of the human person.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="episodes.html">Episodes</a></li>
+          <li><a href="donation.html">Support Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="currentYear"></span> Worthscope. All rights reserved.</div>
+      <div style="display:flex; gap: 1rem;">
+        <a href="https://podcasts.apple.com/us/podcast/playing-books/id1768578068" target="_blank" style="color:inherit;"><i class="fab fa-apple"></i></a>
+        <a href="https://open.spotify.com/show/79YPMiPBPl08ffi3u30aRj" target="_blank" style="color:inherit;"><i class="fab fa-spotify"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Audio Player Widget -->
+  <div id="audioPlayerWidget" class="audio-player-widget hidden paused">
+    <div class="pill-view" id="playerPillView">
+      <div class="pill-cover"><img src="" id="pillCover" alt="Cover" onerror="this.src='img/podcast_listener_hero_1789554024093.jpg'"></div>
+      <div class="pill-marquee-container">
+        <div class="pill-marquee pillTitleSync" style="color: var(--c-cream);">Select a track</div>
+      </div>
+      <button class="pill-btn play-btn-sync"><i class="fas fa-play"></i></button>
+      <button class="pill-btn" id="btnMax"><i class="fas fa-chevron-up"></i></button>
+      <button class="pill-btn" id="btnClosePill"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="audio-player-bar" id="playerBarView">
+      <div class="player-cover"><img src="" id="barCover" alt="Cover" onerror="this.src='img/podcast_listener_hero_1789554024093.jpg'"></div>
+      <div class="player-details">
+        <div class="pill-marquee-container" style="width: 100%; max-width: 800px;">
+          <div class="pill-marquee pillTitleSync" style="font-family: 'Playfair Display', serif; font-size: 1.4rem;">Select a track</div>
+        </div>
+        <div class="bar-controls-row">
+          <div class="time-container"><span id="current-time">0:00</span></div>
+          <input type="range" id="seek-slider" class="custom-slider" max="100" value="0">
+          <div class="time-container"><span id="duration-time">0:00</span></div>
+          <i class="fas fa-volume-up" style="margin-left: 30px; color: var(--c-teal);"></i>
+          <input type="range" id="volume-slider" class="custom-slider" style="width: 100px; margin-left: 10px;" max="100" value="100">
+        </div>
+      </div>
+      <div class="player-controls">
+        <button class="player-btn" id="btnSkipBack" title="Previous Episode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+        </button>
+        <button class="player-btn play-btn-sync"><i class="fas fa-play"></i></button>
+        <button class="player-btn" id="btnSkipFwd" title="Next Episode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+        </button>
+        <div style="border-left: 1px solid rgba(255,255,255,0.2); height: 40px; margin: 0 20px;"></div>
+        <button class="player-btn" id="btnMin" title="Minimize"><i class="fas fa-chevron-down"></i></button>
+        <button class="player-btn" id="btnExpand" title="Expand"><i class="fas fa-expand-arrows-alt"></i></button>
+        <button class="player-btn" id="btnClose" title="Close"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div class="card-view" id="playerCardView">
+      <div class="card-drag-indicator"></div>
+      <div class="card-cover-container"><img src="" id="cardCover" alt="Cover" onerror="this.src='img/podcast_listener_hero_1789554024093.jpg'"></div>
+      <div class="card-marquee-container"><div class="card-marquee pillTitleSync">Select a track</div></div>
+      <div class="card-subtitle">Playing Books</div>
+      <div class="progress-container">
+        <input type="range" id="seek-slider-card" class="custom-slider" max="100" value="0">
+        <div class="time-container" style="display:flex;justify-content:space-between;">
+          <span id="current-time-card">0:00</span><span id="duration-time-card">0:00</span>
+        </div>
+      </div>
+      <div class="card-controls">
+        <button class="ctrl-btn" id="btnSkipBackCard"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg></button>
+        <button class="ctrl-play play-btn-sync"><i class="fas fa-play"></i></button>
+        <button class="ctrl-btn" id="btnSkipFwdCard"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg></button>
+      </div>
+      <div class="volume-container">
+        <i class="fas fa-volume-up" style="color:var(--c-teal); opacity:0.8; font-size:1.2rem;"></i>
+        <input type="range" id="volume-slider-card" class="custom-slider" max="100" value="100">
+      </div>
+      <div class="bottom-actions">
+        <button class="action-btn" id="btnMinCard"><i class="fas fa-chevron-down"></i></button>
+        <button class="action-btn" id="btnCompress"><i class="fas fa-compress-arrows-alt"></i></button>
+        <button class="action-btn" id="btnCloseCard"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <audio id="global-audio" src=""></audio>
+  </div>
+
+</div>
+<script src="js/app.js?v=about2026"></script>
+</body>
+</html>

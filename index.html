@@ -1,174 +1,306 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#1695a0" />
-
-  <!-- Primary Meta Tags -->
-  <title>The Playing Books Podcast | Audio Summaries of Bestselling Books</title>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      if (window.location.protocol === 'file:') {
-        const root = document.getElementById('root');
-        if (root) {
-          root.innerHTML = `
-              <div style="padding: 40px; max-width: 600px; margin: 40px auto; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-family: system-ui, -apple-system, sans-serif; color: #36454f; line-height: 1.6;">
-                <h2 style="color: #1695a0; margin-top: 0; display: flex; items-center: center; gap: 10px;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                  Local Preview Restricted
-                </h2>
-                <p>This React application uses ES modules and TypeScript, which browsers cannot load directly from a file (<code>file://</code>) due to security restrictions.</p>
-                <div style="background: #f8f9fa; border-left: 4px solid #1695a0; padding: 15px; margin: 20px 0;">
-                  <p style="margin: 0; font-weight: bold;">To view the site correctly:</p>
-                  <ol style="margin: 10px 0 0 20px; padding: 0;">
-                    <li>Open your terminal/command prompt</li>
-                    <li>Navigate to this folder</li>
-                    <li>Run these commands:</li>
-                  </ol>
-                  <pre style="background: #2d3748; color: #fff; padding: 12px; border-radius: 6px; margin-top: 10px; font-size: 14px; overflow-x: auto;">npm install\nnpm run dev</pre>
-                </div>
-                <p style="font-size: 14px; color: #666;">After running the commands, open the <strong>Local</strong> URL shown in your terminal (usually <code>http://localhost:3000</code>).</p>
-              </div>
-            `;
-        }
-      }
-    });
-    window.addEventListener('error', function (e) {
-      console.error('Runtime error:', e);
-    });
-  </script>
-  <meta name="title" content="The Playing Books Podcast | Audio Summaries of Bestselling Books">
-  <meta name="description"
-    content="Maximize your time with high-quality audio summaries of the world's bestselling books, documentaries, and movies. Designed for busy professionals.">
-  <meta name="keywords"
-    content="Playing Books Podcast, audio book summaries, executive summaries, best non-fiction books, documentary reviews, literary competitions, professional development audio, productivity for leaders, business book insights, learn while driving">
-  <meta name="author" content="Playing Books Podcast">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://playingbooks.com/">
-  <meta property="og:title" content="The Playing Books Podcast | Read Less. Understand More.">
-  <meta property="og:description"
-    content="Unlock the key insights of the world's best books, movies, and documentaries. Join a community of thinkers.">
-  <meta property="og:image"
-    content="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1200&auto=format&fit=crop">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://playingbooks.com/">
-  <meta property="twitter:title" content="The Playing Books Podcast">
-  <meta property="twitter:description"
-    content="Audio insights for the modern professional. Books, culture, and competition.">
-  <meta property="twitter:image"
-    content="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1200&auto=format&fit=crop">
-
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20id%3D%22microphone_icon%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20100%20125%22%20style%3D%22enable-background%3Anew%200%200%20100%20125%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cg%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%231695a0%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M35%2C48.5%20V19.2%20c0%2C-8.3%2C%206.7%2C-15%2C%2015%2C-15%20s15%2C6.7%2C%2015%2C15%20v29.3%20c0%2C8.3%2C-6.7%2C15%2C-15%2C15%20S35%2C56.8%2C35%2C48.5z%22%2F%3E%3Cline%20fill%3D%22none%22%20stroke%3D%22%231695a0%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20x1%3D%2242%22%20y1%3D%2230%22%20x2%3D%2258%22%20y2%3D%2230%22%2F%3E%3Cline%20fill%3D%22none%22%20stroke%3D%22%231695a0%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20x1%3D%2242%22%20y1%3D%2238%22%20x2%3D%2258%22%20y2%3D%2238%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%231695a0%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M25%2C55%20c0%2C13.8%2C11.2%2C25%2C25%2C25%20s25%2C-11.2%2C25%2C-25%22%2F%3E%3Cline%20fill%3D%22none%22%20stroke%3D%22%231695a0%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20x1%3D%2250%22%20y1%3D%2280%22%20x2%3D%2250%22%20y2%3D%2295%22%2F%3E%3Cline%20fill%3D%22none%22%20stroke%3D%22%231695a0%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20x1%3D%2235%22%20y1%3D%2295%22%20x2%3D%2265%22%20y2%3D%2295%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'Merriweather', serif;
-    }
-
-    /* Custom scrollbar for a cleaner look */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #fdfce9;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #1695a0;
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #127a82;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    }
-
-    /* Global background movement - more sophisticated and sharper */
-    @keyframes soft-glow {
-
-      0%,
-      100% {
-        background-position: 0% 50%;
-        filter: saturate(1.1) brightness(1);
-      }
-
-      50% {
-        background-position: 100% 50%;
-        filter: saturate(1.3) brightness(1.05);
-      }
-    }
-
-    .animate-soft-glow {
-      background: linear-gradient(135deg, #1695a0, #1aadb9, #0f7a83, #1695a0);
-      background-size: 300% 300%;
-      animation: soft-glow 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-      position: relative;
-    }
-
-    .animate-soft-glow::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
-      pointer-events: none;
-    }
-
-    /* Sharp Entry Animations */
-    @keyframes reveal-up {
-      from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.98);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .reveal-section {
-      animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-  </style>
-  <link rel="stylesheet" href="./index.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playing Books Podcast</title>
+  <link rel="stylesheet" href="css/style.css?v=1789591133">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
+  <div class="site-wrapper">
+    <!-- Grid Header -->
+    <header class="header-grid">
+      <a href="index.html" class="logo-container">
+        <svg width="30" height="30" viewBox="0 0 100 125" fill="none" stroke="currentColor" stroke-width="6">
+          <path d="M35,48.5 V19.2 c0,-8.3, 6.7,-15, 15,-15 s15,6.7, 15,15 v29.3 c0,8.3,-6.7,15,-15,15 S35,56.8,35,48.5z"/>
+          <path d="M25,55 c0,13.8,11.2,25,25,25 s25,-11.2,25,-25"/>
+          <line x1="50" y1="80" x2="50" y2="95"/>
+          <line x1="35" y1="95" x2="65" y2="95"/>
+        </svg>
+        Playing Books
+      </a>
+      <nav class="nav-links">
+        <a href="episodes.html">Episodes</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <a href="donation.html" class="donate-btn-header">Support Us</a>
+          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
 
-<body class="bg-[#fdfce9] text-[#36454f]">
-  <div id="root"></div>
-  <script type="module" src="./index.tsx"></script>
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+      <div class="mobile-nav-inner">
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&times;</button>
+        <nav class="mobile-nav-links">
+          <a href="index.html">Home</a>
+          <a href="episodes.html">Episodes</a>
+          <a href="about.html">About Us</a>
+          <a href="donation.html">Support Us</a>
+        </nav>
+        <div class="mobile-nav-footer">
+          <a href="https://podcasts.apple.com/us/podcast/playing-books/id1768578068" target="_blank"><i class="fab fa-apple"></i></a>
+          <a href="https://open.spotify.com/show/79YPMiPBPl08ffi3u30aRj" target="_blank"><i class="fab fa-spotify"></i></a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms-of-service.html">Terms</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid Hero -->
+    <section class="hero-grid">
+      <div class="hero-text">
+        <h4 style="color: var(--c-teal); text-transform: uppercase; letter-spacing: 2px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; margin-bottom: 1rem; font-weight: 700;">Now Streaming. New Episodes Weekly.</h4>
+        <h1 style="font-size: 4.5vw; margin-bottom: 1rem; line-height: 1.1;">Designed for Readers.<br>Built for Listeners.</h1>
+        <p>High-quality audio summaries of the world's bestselling books. Absorb key insights during your commute, workout, rest, coffee, or thinking time.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+          <button id="playLatestHeroBtn" class="btn-sharp" style="cursor:pointer;">Start Listening</button>
+          <a href="episodes.html" class="btn-sharp" style="background: transparent; color: var(--c-charcoal); border-color: var(--c-charcoal);">Past Episodes</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="img/podcast_listener_hero_1789554024093.jpg" alt="Person intensely listening to audio">
+      </div>
+    </section>
+
+    <!-- Quotes Grid -->
+    <section class="quotes-grid" style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border-color);">
+      <!-- Quote 1 -->
+      <div style="display: flex; flex-direction: column; border-right: 1px solid var(--border-color);">
+        <div style="padding: 4rem 5rem; flex: 1; display: flex; flex-direction: column; justify-content: center; background: var(--c-charcoal); color: var(--c-cream);">
+          <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--c-teal);">Do you think about and apply what you read?</h3>
+          <blockquote style="font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 1.25rem; font-style: italic; line-height: 1.6; margin-bottom: 1rem;">"There are altogether too many people who are trying to make something of themselves by reading books without thinking; all such will fail. You are not mentally developed by what you read, but by what you think about what you read."</blockquote>
+          <footer style="text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 600; opacity: 0.8;">— Wallace D. Wattles</footer>
+        </div>
+        <div style="height: 400px; border-top: 1px solid var(--border-color);">
+          <img src="img/quote_wattles.jpg" alt="Person reading" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+      
+      <!-- Quote 2 -->
+      <div style="display: flex; flex-direction: column;">
+        <div style="height: 400px; border-bottom: 1px solid var(--border-color);">
+          <img src="img/quote_huxley.jpg" alt="Library" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="padding: 4rem 5rem; flex: 1; display: flex; flex-direction: column; justify-content: center; background: var(--c-cream);">
+          <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--c-crimson);">Make Serious & Steady Reading a Habit</h3>
+          <blockquote style="font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 1.25rem; font-style: italic; line-height: 1.6; margin-bottom: 1rem; color: var(--c-charcoal);">"Everyone who knows how to read has it in their power to magnify themselves, to multiply the ways in which they exist, to make their life full, significant, and interesting."</blockquote>
+          <footer style="text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 600; color: var(--c-charcoal); opacity: 0.8;">— Aldous Huxley</footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid Philosophy -->
+    <section class="philosophy-grid">
+      <div class="phil-text" style="border-right: 1px solid var(--border-color);">
+        <h2>Reading is Just the Beginning.</h2>
+        <p>We won't stop until audiobooks start having effects on people like music. The ability to replay portions of a book, to hear concepts explained in different ways, and to engage with the material while on the go creates multiple pathways for learning.</p>
+        <a href="about.html" class="btn-sharp" style="margin-top: 2rem;">Our Vision and Mission</a>
+      </div>
+      <div class="phil-visual" style="border-left: none;">
+        <img src="img/podcast_studio_philosophy_1789554033628.jpg" alt="Microphone and studio setup" style="border-right: none;">
+      </div>
+    </section>
+
+    <!-- Grid Episodes -->
+    <section class="episodes-section">
+      <div class="section-header">
+        <h2>Latest Releases</h2>
+        <a href="episodes.html" class="btn-sharp">All Episodes</a>
+      </div>
+      <div class="episodes-grid" id="latestEpisodesGrid">
+        <!-- JS Populated -->
+        <div style="padding: 3rem;">Loading library...</div>
+      </div>
+    </section>
+
+    <!-- Donation CTA Grid -->
+    <section class="philosophy-grid" style="border-bottom: none;">
+      <div class="phil-text" style="background: var(--c-teal); color: var(--c-cream); border-right: 1px solid var(--border-color);">
+        <h2 style="color: var(--c-cream); font-size: 3.5rem;">Fund the Mission.</h2>
+        <p style="color: rgba(253,252,233,0.9); font-size: 1.25rem;">Transforming the way people experience books takes immense resources. Support our global production through one of our secure channels.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="donation.html" class="btn-sharp" style="background: var(--c-cream); color: var(--c-teal); border-color: var(--c-cream);">Support Us Today</a>
+        </div>
+      </div>
+      <div class="phil-visual">
+        <img src="img/patron_donation_1789554043343.jpg" alt="Support Playing Books">
+      </div>
+    </section>
+
+    <!-- Subscribe Grid -->
+    <section class="subscribe-section" style="border-bottom: 1px solid var(--border-color);">
+      <div class="section-header" style="background: var(--c-charcoal); color: var(--c-cream); border-bottom: 1px solid rgba(255,255,255,0.1); display: block; text-align: center;">
+        <h2 style="color: var(--c-cream); font-size: 3rem;">Subscribe Now</h2>
+        <p style="opacity: 0.8; font-size: 1.2rem; margin-top: 1rem;">Never miss an episode. Subscribe to our podcast on your favorite platform.</p>
+      </div>
+      <div class="subscribe-grid">
+        
+        <a href="https://podcasts.apple.com/us/podcast/playing-books/id1768578068" target="_blank" style="padding: 4rem 2rem; text-align: center; border-right: 1px solid var(--border-color); background: var(--c-cream); color: var(--c-charcoal); text-decoration: none; transition: background 0.3s, color 0.3s;" onmouseover="this.style.background='var(--c-teal)'; this.style.color='var(--c-white)';" onmouseout="this.style.background='var(--c-cream)'; this.style.color='var(--c-charcoal)';">
+          <i class="fas fa-podcast" style="font-size: 3rem; margin-bottom: 1.5rem;"></i>
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem;">Apple Podcasts</h4>
+        </a>
+
+        <a href="https://open.spotify.com/show/79YPMiPBPl08ffi3u30aRj" target="_blank" style="padding: 4rem 2rem; text-align: center; border-right: 1px solid var(--border-color); background: var(--c-cream); color: var(--c-charcoal); text-decoration: none; transition: background 0.3s, color 0.3s;" onmouseover="this.style.background='var(--c-green)'; this.style.color='var(--c-white)';" onmouseout="this.style.background='var(--c-cream)'; this.style.color='var(--c-charcoal)';">
+          <i class="fab fa-spotify" style="font-size: 3rem; margin-bottom: 1.5rem;"></i>
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem;">Spotify</h4>
+        </a>
+
+        <a href="https://music.amazon.com/podcasts/aed261f1-3816-4aef-b12c-4f2881c3ade0/playing-books" target="_blank" style="padding: 4rem 2rem; text-align: center; border-right: 1px solid var(--border-color); background: var(--c-cream); color: var(--c-charcoal); text-decoration: none; transition: background 0.3s, color 0.3s;" onmouseover="this.style.background='#FF9900'; this.style.color='var(--c-white)';" onmouseout="this.style.background='var(--c-cream)'; this.style.color='var(--c-charcoal)';">
+          <i class="fab fa-amazon" style="font-size: 3rem; margin-bottom: 1.5rem;"></i>
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem;">Amazon Music</h4>
+        </a>
+
+        <a href="https://podcastaddict.com/podcast/playing-books/5948903" target="_blank" style="padding: 4rem 2rem; text-align: center; border-right: 1px solid var(--border-color); background: var(--c-cream); color: var(--c-charcoal); text-decoration: none; transition: background 0.3s, color 0.3s;" onmouseover="this.style.background='var(--c-charcoal)'; this.style.color='var(--c-white)';" onmouseout="this.style.background='var(--c-cream)'; this.style.color='var(--c-charcoal)';">
+          <i class="fas fa-broadcast-tower" style="font-size: 3rem; margin-bottom: 1.5rem;"></i>
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem;">Podcast Addict</h4>
+        </a>
+
+        <a href="https://www.iheart.com/podcast/269-playing-books-273472023/" target="_blank" style="padding: 4rem 2rem; text-align: center; background: var(--c-cream); color: var(--c-charcoal); text-decoration: none; transition: background 0.3s, color 0.3s;" onmouseover="this.style.background='var(--c-crimson)'; this.style.color='var(--c-white)';" onmouseout="this.style.background='var(--c-cream)'; this.style.color='var(--c-charcoal)';">
+          <i class="far fa-heart" style="font-size: 3rem; margin-bottom: 1.5rem;"></i>
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem;">iHeartRadio</h4>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Grid Footer -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <svg width="40" height="40" viewBox="0 0 100 125" fill="none" stroke="currentColor" stroke-width="4">
+            <path d="M35,48.5 V19.2 c0,-8.3, 6.7,-15, 15,-15 s15,6.7, 15,15 v29.3 c0,8.3,-6.7,15,-15,15 S35,56.8,35,48.5z"/>
+            <path d="M25,55 c0,13.8,11.2,25,25,25 s25,-11.2,25,-25"/>
+            <line x1="50" y1="80" x2="50" y2="95"/>
+            <line x1="35" y1="95" x2="65" y2="95"/>
+          </svg>
+          <p>Tapping the Length. Breath. Depth. Height. of the human person.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="episodes.html">Episodes</a></li>
+            <li><a href="donation.html">Support Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="currentYear"></span> Worthscope. All rights reserved.</div>
+        <div style="display:flex; gap: 1rem;">
+          <a href="https://podcasts.apple.com/us/podcast/playing-books/id1768578068" target="_blank" style="color:inherit;"><i class="fab fa-apple"></i></a>
+          <a href="https://open.spotify.com/show/79YPMiPBPl08ffi3u30aRj" target="_blank" style="color:inherit;"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+                <!-- Audio Player Widget -->
+  <div id="audioPlayerWidget" class="audio-player-widget hidden paused">
+    
+    <!-- PILL MODE (Minimized - Draggable) -->
+    <div class="pill-view" id="playerPillView">
+      <div class="pill-cover"><img src="" id="pillCover" alt="Cover" onerror="this.src='img/podcast_listener_hero_1789554024093.jpg'"></div>
+      <div class="pill-marquee-container">
+        <div class="pill-marquee pillTitleSync" style="color: var(--c-cream);">Select a track</div>
+      </div>
+      <button class="pill-btn play-btn-sync"><i class="fas fa-play"></i></button>
+      <button class="pill-btn" id="btnMax"><i class="fas fa-chevron-up"></i></button>
+      <button class="pill-btn" id="btnClosePill"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- BLACK BOTTOM BAR MODE (Maximized) -->
+    <div class="audio-player-bar" id="playerBarView">
+      <div class="player-cover">
+        <img src="" id="barCover" alt="Cover" onerror="this.src='img/podcast_listener_hero_1789554024093.jpg'">
+      </div>
+      <div class="player-details">
+        <div class="pill-marquee-container" style="width: 100%; max-width: 800px;">
+          <div class="pill-marquee pillTitleSync" style="font-family: 'Playfair Display', serif; font-size: 1.4rem;">Select a track</div>
+        </div>
+        
+        <!-- Progress & Volume -->
+        <div class="bar-controls-row">
+          <div class="time-container"><span id="current-time">0:00</span></div>
+          <input type="range" id="seek-slider" class="custom-slider" max="100" value="0">
+          <div class="time-container"><span id="duration-time">0:00</span></div>
+          
+          <i class="fas fa-volume-up" style="margin-left: 30px; color: var(--c-teal);"></i>
+          <input type="range" id="volume-slider" class="custom-slider" style="width: 100px; margin-left: 10px;" max="100" value="100">
+        </div>
+      </div>
+
+      <div class="player-controls">
+        <button class="player-btn" id="btnSkipBack" title="Previous Episode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+        </button>
+        <button class="player-btn play-btn-sync"><i class="fas fa-play"></i></button>
+        <button class="player-btn" id="btnSkipFwd" title="Next Episode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+        </button>
+        
+        <div style="border-left: 1px solid rgba(255,255,255,0.2); height: 40px; margin: 0 20px;"></div>
+        
+        <button class="player-btn" id="btnMin" title="Minimize"><i class="fas fa-chevron-down"></i></button>
+        <button class="player-btn" id="btnExpand" title="Expand"><i class="fas fa-expand-arrows-alt"></i></button>
+        <button class="player-btn" id="btnClose" title="Close"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    
+    <!-- THIRD SIZE: EXPANDED GLASSY CARD (Draggable) -->
+    <div class="card-view" id="playerCardView">
+      <div class="card-drag-indicator"></div>
+      
+      <div class="card-cover-container">
+        <img src="" id="cardCover" alt="Cover" onerror="this.src='img/podcast_listener_hero_1789554024093.jpg'">
+      </div>
+      <div class="card-marquee-container">
+        <div class="card-marquee pillTitleSync">Select a track</div>
+      </div>
+      <div class="card-subtitle">Playing Books</div>
+      
+      <div class="progress-container">
+        <input type="range" id="seek-slider-card" class="custom-slider" max="100" value="0">
+        <div class="time-container">
+          <span id="current-time-card">0:00</span>
+          <span id="duration-time-card">0:00</span>
+        </div>
+      </div>
+
+      <div class="card-controls">
+        <button class="ctrl-btn" id="btnSkipBackCard" title="Previous Episode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+        </button>
+        <button class="ctrl-play play-btn-sync"><i class="fas fa-play"></i></button>
+        <button class="ctrl-btn" id="btnSkipFwdCard" title="Next Episode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+        </button>
+      </div>
+
+      <div class="volume-container">
+        <i class="fas fa-volume-up" style="color:var(--c-teal); opacity:0.8; font-size:1.2rem;"></i>
+        <input type="range" id="volume-slider-card" class="custom-slider" max="100" value="100">
+      </div>
+
+      <div class="bottom-actions">
+        <button class="action-btn" id="btnMinCard"><i class="fas fa-chevron-down"></i></button>
+        <button class="action-btn" id="btnCompress"><i class="fas fa-compress-arrows-alt"></i></button>
+        <button class="action-btn" id="btnCloseCard"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+
+    <audio id="global-audio" src=""></audio>
+  </div>
+
+  <script src="js/app.js?v=1789566290"></script>
 </body>
-
 </html>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1695a0" />
+      <stop offset="100%" stop-color="#0e7a82" />
+    </linearGradient>
+  </defs>
+  <style>
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .primary { fill: url(#logoGradient); }
+    .secondary { fill: #333; }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .book {
+      transform-origin: center;
+    }
+    .logo:hover .book {
+      animation: pulse 2s infinite ease-in-out;
+    }
+    .sound-wave {
+      stroke: #1695a0;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      fill: none;
+    }
+  </style>
+
+  <g class="logo">
+    <!-- Book icon -->
+    <g class="book" transform="translate(10, 15) scale(0.8)">
+      <path d="M5,5 L5,45 L35,45 C40,45 45,40 45,35 L45,15 C45,10 40,5 35,5 L5,5 Z" fill="#1695a0" />
+      <path d="M5,5 L5,45 L25,45 L25,5 L5,5 Z" fill="#fdfce9" />
+      <path d="M5,5 L5,45" stroke="#0e7a82" stroke-width="1.5" />
+      <line x1="10" y1="15" x2="20" y2="15" stroke="#0e7a82" stroke-width="1.5" />
+      <line x1="10" y1="20" x2="20" y2="20" stroke="#0e7a82" stroke-width="1.5" />
+      <line x1="10" y1="25" x2="20" y2="25" stroke="#0e7a82" stroke-width="1.5" />
+      <line x1="10" y1="30" x2="20" y2="30" stroke="#0e7a82" stroke-width="1.5" />
+      <line x1="10" y1="35" x2="20" y2="35" stroke="#0e7a82" stroke-width="1.5" />
+    </g>
+
+    <!-- Sound waves -->
+    <path class="sound-wave" d="M55,30 Q60,20 65,30" />
+    <path class="sound-wave" d="M50,30 Q60,10 70,30" />
+
+    <!-- Text -->
+    <text x="75" y="25" class="logo-text primary" font-size="16">PLAYING</text>
+    <text x="75" y="42" class="logo-text secondary" font-size="18">BOOKS</text>
+
+    <!-- Decorative elements -->
+    <rect x="75" y="45" width="100" height="2" rx="1" class="primary" />
+    <circle cx="180" cy="30" r="5" fill="#1695a0" opacity="0.7" />
+    <circle cx="190" cy="30" r="3" fill="#1695a0" opacity="0.5" />
+  </g>
+</svg>

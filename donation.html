@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Donate | Playing Books Podcast</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Grid Header -->
+    <header class="header-grid">
+      <a href="index.html" class="logo-container">
+        <svg width="30" height="30" viewBox="0 0 100 125" fill="none" stroke="currentColor" stroke-width="6">
+          <path d="M35,48.5 V19.2 c0,-8.3, 6.7,-15, 15,-15 s15,6.7, 15,15 v29.3 c0,8.3,-6.7,15,-15,15 S35,56.8,35,48.5z"/>
+          <path d="M25,55 c0,13.8,11.2,25,25,25 s25,-11.2,25,-25"/>
+          <line x1="50" y1="80" x2="50" y2="95"/>
+          <line x1="35" y1="95" x2="65" y2="95"/>
+        </svg>
+        Playing Books
+      </a>
+      <nav class="nav-links">
+        <a href="episodes.html">Episodes</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <a href="donation.html" class="donate-btn-header">Support Us</a>
+          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+      <div class="mobile-nav-inner">
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&times;</button>
+        <nav class="mobile-nav-links">
+          <a href="index.html">Home</a>
+          <a href="episodes.html">Episodes</a>
+          <a href="about.html">About Us</a>
+          <a href="donation.html">Support Us</a>
+        </nav>
+        <div class="mobile-nav-footer">
+          <a href="https://podcasts.apple.com/us/podcast/playing-books/id1768578068" target="_blank"><i class="fab fa-apple"></i></a>
+          <a href="https://open.spotify.com/show/79YPMiPBPl08ffi3u30aRj" target="_blank"><i class="fab fa-spotify"></i></a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms-of-service.html">Terms</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="hero-grid" style="min-height: auto;">
+      <div class="hero-text" style="padding: 5rem; border-right: none;">
+        <h1>Become a Patron.</h1>
+        <p>Your support helps us transform how people experience books. Every donation fuels our journey to make audiobooks impact people's lives like music.</p>
+      </div>
+      <div class="hero-visual" style="border-left: 1px solid var(--border-color);">
+        <img src="img/patron_donation_1789554043343.jpg" alt="Patron focus">
+      </div>
+    </section>
+
+    <!-- Donation Amount Selector -->
+    <section style="max-width: 800px; margin: 4rem auto 0; padding: 0 2rem; text-align: center;">
+      <h2 style="font-size: 2rem; color: var(--c-charcoal); margin-bottom: 1.5rem;">Select your donation amount</h2>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+        <button class="amount-btn active" data-val="10">$10</button>
+        <button class="amount-btn" data-val="25">$25</button>
+        <button class="amount-btn" data-val="50">$50</button>
+        <button class="amount-btn" data-val="100">$100</button>
+        <div style="position: relative; display: inline-block;">
+          <span style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); font-weight: 600; color: var(--c-charcoal);"></span>
+          <input type="number" id="custom-amount" placeholder="Custom Amount" min="1" style="padding: 1rem 1rem 1rem 2rem; font-size: 1.2rem; border: 1px solid var(--border-color); outline: none; width: 180px; font-family: 'Montserrat', sans-serif;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Donation Cards Grid -->
+    <section class="episodes-grid" style="border-bottom: 1px solid var(--border-color); grid-template-columns: repeat(3, 1fr);">
+      
+      <!-- Stripe / Credit Card -->
+      <div class="episode-card" style="padding: 4rem 2rem; text-align: center; border-bottom: 1px solid var(--border-color);">
+        <i class="fab fa-stripe" style="font-size: 3.5rem; color: #635bff; margin-bottom: 2rem;"></i>
+        <h3 style="font-family:'Playfair Display', serif; font-size:1.8rem; margin-bottom:1rem;">Stripe</h3>
+        <p style="color:#556b7d; margin-bottom: 2rem; font-size:0.9rem;">Securely donate via Credit or Debit Card.</p>
+        <button class="btn-sharp stripe-trigger" style="margin-top:auto; width:100%; background:#635bff; border-color:#635bff;">Donate via Stripe</button>
+      </div>
+
+      <!-- PayPal -->
+      <div class="episode-card" style="padding: 4rem 2rem; text-align: center; border-bottom: 1px solid var(--border-color);">
+        <i class="fab fa-paypal" style="font-size: 3rem; color: #00457C; margin-bottom: 2rem;"></i>
+        <h3 style="font-family:'Playfair Display', serif; font-size:1.8rem; margin-bottom:1rem;">PayPal</h3>
+        <p style="color:#556b7d; margin-bottom: 2rem; font-size:0.9rem;">Fast, secure, and direct worldwide support.</p>
+        <div id="paypal-button-container" style="margin-top:auto; width:100%;"></div>
+      </div>
+
+      <!-- Cash App -->
+      <div class="episode-card" style="padding: 4rem 2rem; text-align: center; border-bottom: 1px solid var(--border-color);">
+        <i class="fas fa-dollar-sign" style="font-size: 3rem; color: #00D632; margin-bottom: 2rem;"></i>
+        <h3 style="font-family:'Playfair Display', serif; font-size:1.8rem; margin-bottom:1rem;">Cash App</h3>
+        <p style="color:#556b7d; margin-bottom: 2rem; font-size:0.9rem;">Instant support directly from your phone.</p>
+        <a href="https://cash.app/$PlayingBooks" target="_blank" class="btn-sharp" style="margin-top:auto; width:100%; background:#00D632; border-color:#00D632; color:#000;">Donate via CashApp</a>
+      </div>
+
+      <!-- Apple Pay -->
+      <div class="episode-card" style="padding: 4rem 2rem; text-align: center; border-bottom: none;">
+        <i class="fab fa-apple" style="font-size: 3rem; color: #000; margin-bottom: 2rem;"></i>
+        <h3 style="font-family:'Playfair Display', serif; font-size:1.8rem; margin-bottom:1rem;">Apple Pay</h3>
+        <p style="color:#556b7d; margin-bottom: 2rem; font-size:0.9rem;">One-tap checkout for iOS and Mac users.</p>
+        <button class="btn-sharp stripe-trigger" style="margin-top:auto; width:100%; background:#000; border-color:#000;">Donate via Apple Pay</button>
+      </div>
+
+      <!-- Google Pay -->
+      <div class="episode-card" style="padding: 4rem 2rem; text-align: center; border-bottom: none;">
+        <i class="fab fa-google" style="font-size: 3rem; color: #4285F4; margin-bottom: 2rem;"></i>
+        <h3 style="font-family:'Playfair Display', serif; font-size:1.8rem; margin-bottom:1rem;">Google Pay</h3>
+        <p style="color:#556b7d; margin-bottom: 2rem; font-size:0.9rem;">Seamless checkout for Android and Chrome users.</p>
+        <button class="btn-sharp stripe-trigger" style="margin-top:auto; width:100%; background:#4285F4; border-color:#4285F4;">Donate via Google Pay</button>
+      </div>
+
+      <!-- Meta Pay -->
+      <div class="episode-card" style="padding: 4rem 2rem; text-align: center; border-bottom: none;">
+        <i class="fab fa-meta" style="font-size: 3rem; color: #0668E1; margin-bottom: 2rem;"></i>
+        <h3 style="font-family:'Playfair Display', serif; font-size:1.8rem; margin-bottom:1rem;">Meta Pay</h3>
+        <p style="color:#556b7d; margin-bottom: 2rem; font-size:0.9rem;">Secure checkout across Meta platforms.</p>
+        <button class="btn-sharp stripe-trigger" style="margin-top:auto; width:100%; background:#0668E1; border-color:#0668E1;">Donate via Meta Pay</button>
+      </div>
+
+    </section>
+
+    <!-- Digital Wallets Highlight Banner -->
+    <section style="background: #1695a0; color: var(--c-cream); text-align: center; padding: 4rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.15);">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1.5rem;">One-Tap Giving</h3>
+        <p style="max-width: 600px; margin: 0 auto 2rem auto; font-size: 1.1rem; opacity: 0.8;">Our Stripe integration automatically detects your device's native digital wallet for a seamless, secure, one-tap donation experience.</p>
+        <div style="display: flex; gap: 2rem; justify-content: center; font-size: 2.5rem; color: var(--c-cream); margin-bottom: 2rem;">
+            <i class="fab fa-apple"></i>
+            <i class="fab fa-google"></i>
+            <i class="fab fa-meta"></i>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; color: white; opacity: 0.95;">Thank you so much for your generosity.</p>
+    </section>
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAte7_-1610tzu_26PJTtMGm8Kr5JJCo_t1tJkcF5sgDBb8tcjCowoUx5DJaVuq_uMvZxr3KM7DtTnhT4&currency=USD"></script>
+    <script>
+      let currentAmount = '10.00';
+
+      // Amount Selector Logic
+      const amountBtns = document.querySelectorAll('.amount-btn');
+      const customInput = document.getElementById('custom-amount');
+
+      amountBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          amountBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          customInput.value = '';
+          currentAmount = btn.getAttribute('data-val') + '.00';
+        });
+      });
+
+      customInput.addEventListener('input', (e) => {
+        amountBtns.forEach(b => b.classList.remove('active'));
+        const val = parseFloat(e.target.value);
+        if(!isNaN(val) && val > 0) {
+          currentAmount = val.toFixed(2);
+        } else {
+          currentAmount = '10.00'; // fallback
+        }
+      });
+
+      // PayPal Logic
+      paypal.Buttons({
+        style: {
+          layout: 'horizontal',
+          color: 'blue',
+          shape: 'rect',
+          label: 'donate'
+        },
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: currentAmount
+              }
+            }]
+          });
+        },
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+            alert('Thank you for your generous donation, ' + details.payer.name.given_name + '!');
+          });
+        }
+      }).render('#paypal-button-container');
+    </script>
+
+    <!-- Stripe SDK Placeholder -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const triggers = document.querySelectorAll('.stripe-trigger');
+        triggers.forEach(btn => {
+          btn.addEventListener('click', () => {
+            window.open("https://donate.stripe.com/6oU9ATakj1R88cx0dA83C00", "_blank");
+          });
+        });
+      });
+    </script>
+
+    <!-- Grid Footer -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <svg width="40" height="40" viewBox="0 0 100 125" fill="none" stroke="currentColor" stroke-width="4">
+            <path d="M35,48.5 V19.2 c0,-8.3, 6.7,-15, 15,-15 s15,6.7, 15,15 v29.3 c0,8.3,-6.7,15,-15,15 S35,56.8,35,48.5z"/>
+            <path d="M25,55 c0,13.8,11.2,25,25,25 s25,-11.2,25,-25"/>
+            <line x1="50" y1="80" x2="50" y2="95"/>
+            <line x1="35" y1="95" x2="65" y2="95"/>
+          </svg>
+          <p>Tapping the Length. Breath. Depth. Height. of the human person.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="episodes.html">Episodes</a></li>
+            <li><a href="donation.html">Support Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="currentYear"></span> Worthscope. All rights reserved.</div>
+        <div style="display:flex; gap: 1rem;">
+          <a href="https://podcasts.apple.com/us/podcast/playing-books/id1768578068" target="_blank" style="color:inherit;"><i class="fab fa-apple"></i></a>
+          <a href="https://open.spotify.com/show/79YPMiPBPl08ffi3u30aRj" target="_blank" style="color:inherit;"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
